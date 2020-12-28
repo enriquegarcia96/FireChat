@@ -1,0 +1,22 @@
+import { ThrowStmt } from '@angular/compiler';
+import { Component} from '@angular/core';
+import { ChatService } from '../../providers/chat.service';
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+
+})
+export class LoginComponent  {
+
+  constructor( public _cs: ChatService ) { }
+
+  ingresar( proveedor: string ){
+    console.log(proveedor)
+
+    this._cs.login( proveedor );
+
+  }
+
+
+}
