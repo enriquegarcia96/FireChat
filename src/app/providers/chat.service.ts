@@ -23,7 +23,7 @@ export class ChatService {
 
     // escucho cualquier cambio que suceda en el estado de la autentificacion
     this.afAuth.authState.subscribe( user =>{
-      console.log( 'Estado del usuario: ' , user);
+      //console.log( 'Estado del usuario: ' , user);
 
       if (!user) {
         return;
@@ -34,9 +34,15 @@ export class ChatService {
   }
 
   login( proveedor: string ) {
-    this.afAuth.auth.signInWithPopup(new firebase.default.auth.GoogleAuthProvider() );
+    if (proveedor === 'google' ) {
+      this.afAuth.auth.signInWithPopup(new firebase.default.auth.GoogleAuthProvider() );
+    }else{
+      this.afAuth.auth.signInWithPopup(new firebase.default.auth.TwitterAuthProvider());
+    }
   }
+
   logout() {
+    this.usuario = {}
     this.afAuth.auth.singOut();
   }
 
@@ -66,9 +72,10 @@ export class ChatService {
 
     // Objeto que le envio a firebase para grabarlo
     let mensaje: Mensaje = {
-      nombre: 'Demo',
+      nombre: this.usuario.nombre,
       mensaje: texto,
-      fecha: new Date().getTime()
+      fecha: new Date().getTime(),
+      uid: this.usuario.uid
     }
 
     // inserto el mensaje a firebase
