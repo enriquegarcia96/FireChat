@@ -2,6 +2,14 @@
 <hr>
 <div class="app-mensajes" id="app-mensajes">
 
+  <div class="text-right" *ngFor="let chat of  _cs.chats" >
+    <span class="badge bg-primary">Enrique</span>
+    <p>
+      {{ chat.mensaje }}
+    </p>
+  </div>
+
+  <!--
   <div class="text-right">
       <span class="badge bg-primary">Enrique</span>
       <p>
@@ -14,7 +22,7 @@
     <p>
       Hola
     </p>
-  </div>
+  </div>   -->
 
 </div>
 
