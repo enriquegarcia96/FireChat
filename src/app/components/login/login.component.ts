@@ -1,4 +1,3 @@
-import { ThrowStmt } from '@angular/compiler';
 import { Component} from '@angular/core';
 import { ChatService } from '../../providers/chat.service';
 

@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-
-import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
-
-
 import { Mensaje } from '../interface/mensaje.interface';
 import { map } from 'rxjs/operators';
 
@@ -35,15 +32,15 @@ export class ChatService {
 
   login( proveedor: string ) {
     if (proveedor === 'google' ) {
-      this.afAuth.auth.signInWithPopup(new firebase.default.auth.GoogleAuthProvider() );
+      this.afAuth.signInWithPopup(new firebase.default.auth.GoogleAuthProvider() );
     }else{
-      this.afAuth.auth.signInWithPopup(new firebase.default.auth.TwitterAuthProvider());
+      this.afAuth.signInWithPopup(new firebase.default.auth.TwitterAuthProvider());
     }
   }
 
   logout() {
     this.usuario = {}
-    this.afAuth.auth.singOut();
+    this.afAuth.signOut();
   }
 
 

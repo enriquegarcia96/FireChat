@@ -6,10 +6,9 @@ import { AppComponent } from './app.component';
 
 import { FormsModule } from  '@angular/forms';
 
-import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { AngularFireStorageModule } from 'angularfire2/storage';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 
 // componentes
@@ -29,7 +28,6 @@ import { ChatService } from './providers/chat.service';
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireStorageModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
     FormsModule
