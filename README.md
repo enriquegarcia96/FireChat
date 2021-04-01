@@ -10,7 +10,7 @@ Aplicacion de chat en tiempo real usando FireStore como base de datos y autentic
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.1.
 
-## Development server
+## Imagenes sobre el proyecto 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![Captura](https://user-images.githubusercontent.com/46203192/113233908-7e174480-925d-11eb-98d2-a75ae77e0448.PNG)
 
